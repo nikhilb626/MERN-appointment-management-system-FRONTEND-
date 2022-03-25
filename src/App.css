@@ -1,38 +1,386 @@
-.App {
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+.navbar{
+  width: 100%;
+  background:rgb(226, 226, 226);
+  display:flex;
+  justify-content: space-around;
+padding: 4px   
+}
+
+
+.navbar a{
+  text-decoration:none;
+  /* font-size: 1.1rem; */
+  font-weight: 600;
+}
+
+.navbar a i{
+  font-size: 2rem;
+}
+
+.navbar a.active{
+  color:green;
+  font-weight: 700;
+}
+
+.navbar button i{
+  font-size: 2rem;
+  color:rgb(109, 109, 109);
+}
+
+
+
+.form{
+  width: 350px;
+  position: absolute;
+  transform:translate(-50%,-50%);
+  top: 50%;
+  left: 50%;
+  border: 1px solid rgb(202, 202, 202);
+  transition: 0.1s ease-in-out;
+
+}
+
+.hide{
+ left:-100%;
+}
+
+
+.form legend{
   text-align: center;
+  padding: 4px 8px;
+  font-size:1.5rem;
+  font-weight: 600;
+
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.form{
+  display:flex;
+  flex-direction:column;
+  padding: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+
+
+
+
+.form .link{
+  display:flex;
+  margin-top: 20px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.form button{
+  margin-top:30px;
+  height: 30px;
+}
+
+
+.form input{
+  border:none;
+  outline:none;
+  border-bottom: 2px solid rgb(52, 30, 180);
+  margin-top: 40px;
+
+}
+
+
+.form input::placeholder,.form input[type="email"],.form input[type="password"],.form input[type="text"]{
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: rgb(177, 177, 177);
+
+}
+
+.form input[type="email"],.form input[type="password"],.form input[type="text"],.form input[type="date"]{
+  color:rgb(97, 97, 97);
+}
+
+
+.form button{
+  font-weight: 600;
+  font-size: 1.1em;
+}
+
+.link{
+  font-size: 1.1rem;
+  font-weight: 600;
+
+}
+
+.regLink{
+  color:blue;
+  margin-left: 10px;
+  font-weight: 700;
+
+  cursor:pointer;
+}
+
+
+.form select{
+  margin-top: 30px;
+  border:none;
+  border: 1px solid rgb(194, 194, 194);
+  height: 40px;
+  font-size: 1.1rem;
+  color: rgb(177, 177, 177);
+  font-weight: 600;
+  outline:none;
+
+}
+
+
+.options{
+  font-size: 1.1rem;
+  height: 40px;
+  font-size: 1.1rem;
+  color: rgb(177, 177, 177);
+  font-weight: 600;
+  
+}
+
+.options:hover{
+  background:grey;
+  color:white;
+}
+
+.form input[type="date"]{
+  font-size: 1.2rem;
+  color: rgb(177, 177, 177);
+  font-weight: 600;
+  width: 100%;
+}
+
+#selected{
+  background: rgb(153, 153, 153);
+  color:rgb(255, 255, 255);
+}
+
+.view_container{
+  border: 1px solid rgb(214, 214, 214);
+  width: 350px;
+position: absolute;
+transform:translate(-50%,-50%);
+top: 50%;
+left:50%;  
+}
+
+
+.head{
+  width: 100%;
+  text-align: center;
+  padding: 6px;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color:rgb(255, 255, 255);
+  background:#0000aa;
+}
+
+
+.nameDate{
+  display:flex;
+  justify-content: space-around;
+  padding: 10px;
+  font-size: 1.1rem;
+  border-bottom: 1px dashed rgb(177, 177, 177);
+
+
+}
+
+.name span,.date span{
+  font-weight: 600;
+}
+
+.patientName,.patientNumber,.appDate ,.slotNumber{
+  display:flex;
+  justify-content: space-between;
+  padding-right: 20px;
+  padding-left: 20px;
+  margin-bottom: 6px;
+}
+
+
+.patientName span,.patientNumber span,.appDate span,.slotNumber span{
+  font-weight: 600;
+  width: 200px;
+}
+
+
+.view_container .Btn_container{
+  width: fit-content;
+  margin: 20px auto;
+}
+
+
+.Btn_container button{
+  font-size: 1.1rem;
+  padding: 3px 6px;
+  color:rgb(88, 88, 88);
+
+}
+
+
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 50px;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+  font-size: 1rem;
+  color:rgb(78, 78, 78);
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #0131a0;
   color: white;
+  font-weight: 600;
 }
 
-.App-link {
-  color: #61dafb;
+.logoutBtn{
+  padding: 3px 6px;
+  font-size: 1rem;
+  background:transparent;
+  border: 1px solid rgb(202, 202, 202);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+.logoutBtn:hover{
+  background-color:rgb(206, 206, 206);
+
 }
+
+.logoutBtn:active{
+  background-color:rgb(131, 131, 131);
+  color:white;
+}
+
+.full{
+  color:rgb(255, 180, 180);
+  font-weight: 600;
+}
+
+
+.toggle{
+  width: 100%;
+  display:flex;
+
+  flex-direction: column;
+}
+
+
+
+.checkBtn{
+  display:block;
+}
+
+
+.hide2{
+  display:none;
+}
+
+
+.loading{
+  width: fit-content;
+  margin: 10px auto;
+  color:rgb(15, 100, 0);
+  font-weight: 700;
+}
+
+
+.Btn_container span{
+  border: 1px solid rgb(255, 74, 74);
+  padding: 3px 6px;
+  font-weight: 600;
+  color:rgb(255, 30, 30);
+  cursor:pointer;
+}
+
+.Btn_container span:hover{
+  color:white;
+  background:rgb(255, 97, 97);
+}
+
+.Btn_container span:active{
+  color:white;
+  background:rgb(255, 32, 32);
+}
+
+.headingSchedule{
+  width: 300px;
+  margin: 200px auto;
+  text-align: center;
+  color:grey;
+}
+
+.actionCont{
+display:flex;
+justify-content: space-around;
+}
+
+.updateBtn{
+  font-size: 1.3rem;
+  text-decoration:none;
+  color:blue;
+  transition: 0.2s ease-in-out;
+}
+
+.adminDelete{
+  font-size: 1.3rem;
+  color:red;
+  transition: 0.2s ease-in-out;
+
+}
+
+.updateBtn:active,.adminDelete:active{
+  font-size: 1rem;
+}
+
+.error_container{
+  color:rgb(255, 47, 47);
+  font-weight:700;
+  margin: 20px auto;
+  margin-bottom: 0;
+}
+
+
+.successCont{
+  position:relative;
+    display:flex;
+    width: 190px;
+    justify-content: space-between;
+    background-color:rgba(241, 241, 241, 0.924);
+    padding: 5px 8px;
+    font-weight: 600;
+    transition: 0.4s ease-in-out;
+    right: 100%;
+    border-right: 5px solid green;
+    top: 5px;
+  }
+  
+  .show{
+    right: 0;
+  
+  }
+
+  .closeBtn{
+    background:transparent;
+    border: none;
+    font-size: 1.2rem;
+
+  }
